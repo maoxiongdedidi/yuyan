@@ -87,14 +87,11 @@ public class LoginActivity extends MyBaseActivity<ActivityLoginBinding,LoginView
     @Override
     public void initViewObservable() {
         super.initViewObservable();
-        viewModel.uc.isClick.observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean aBoolean) {
-                if(aBoolean){
-                    binding.activityLoginLogin.setBackgroundResource(R.drawable.bg_startup_dialog_button);
-                }else{
-                    binding.activityLoginLogin.setBackgroundResource(R.drawable.bg_startup_dialog_unclick_button);
-                }
+        viewModel.uc.isClick.observe(this, aBoolean -> {
+            if(aBoolean){
+                binding.activityLoginLogin.setBackgroundResource(R.drawable.bg_startup_dialog_button);
+            }else{
+                binding.activityLoginLogin.setBackgroundResource(R.drawable.bg_startup_dialog_unclick_button);
             }
         });
     }
