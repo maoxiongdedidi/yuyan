@@ -51,17 +51,15 @@ public class LoginActivity extends MyBaseActivity<ActivityLoginBinding,LoginView
                 startActivity(intent);
             }
         });
-        binding.activityLoginPrivocy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("name","privacy");
-                intent.putExtra("BUNDLE",bundle);
+        binding.activityLoginPrivocy.setOnClickListener(view1->{
+            Intent intent1 = new Intent(LoginActivity.this, WebViewActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("name","privacy");
+            intent1.putExtra("BUNDLE",bundle);
 
-                startActivity(intent);
-            }
+            startActivity(intent1);
         });
+
         binding.activityLoginVerification.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
