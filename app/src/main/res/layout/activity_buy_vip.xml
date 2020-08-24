@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <import type="androidx.recyclerview.widget.RecyclerView.LayoutManager"/>
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers"/>
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers"/>
+        <variable
+            name="adapter"
+            type="me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter" />
+        <variable
+            name="buyvipviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.buyvip.BuyVIPViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8F8"
+        android:orientation="vertical">
+        <LinearLayout
+            android:fitsSystemWindows="true"
+            android:background="#FF873C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#1a1a1a"
+                    android:textSize="16sp"
+                    android:text="VIP会员"/>
+
+                <ImageView
+                    binding:onClickCommand="@{buyvipviewmodel.finish}"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+     <androidx.core.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+
+             <ImageView
+                 android:scaleType="fitXY"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp"
+                 android:src="@mipmap/banner"
+                 android:layout_marginTop="12dp"/>
+
+
+             <androidx.recyclerview.widget.RecyclerView
+                 android:layout_marginTop="20dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 binding:adapter="@{adapter}"
+                 binding:itemBinding="@{buyvipviewmodel.itemBinding}"
+                 binding:items="@{buyvipviewmodel.observableList}"
+                 binding:lineManager="@{LineManagers.horizontal()}"
+                 binding:layoutManager="@{LayoutManagers.linear(LinearLayoutManager.HORIZONTAL,false)}"
+
+                 />
+
+
+
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="12dp"
+                 android:textColor="#DD2A2A"
+                 android:textSize="12sp"
+                 android:text="@{buyvipviewmodel.vipExpireTime}"
+                 android:layout_marginLeft="20dp"/>
+             <LinearLayout
+                 android:gravity="center_vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="20dp"
+                 android:orientation="horizontal">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="24sp"
+                     android:textColor="#252525"
+                     android:text="@{buyvipviewmodel.price}"/>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="16sp"
+                     android:layout_marginLeft="3dp"
+                     android:textColor="#252525"
+                     android:text="元"/>
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="1dp"
+                     android:layout_weight="1"/>
+                 <TextView
+                     android:id="@+id/activity_buy_vip_pay_text"
+                     binding:onClickCommand="@{buyvipviewmodel.pay}"
+                     android:paddingLeft="17dp"
+                     android:paddingRight="17dp"
+                     android:paddingTop="7dp"
+                     android:paddingBottom="7dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textSize="14sp"
+                     android:textColor="#252525"
+                     android:background="@drawable/bg_startup_dialog_button"
+                     android:text="@{buyvipviewmodel.payButton}"/>
+             </LinearLayout>
+
+             <TextView
+                 android:visibility="gone"
+                 android:layout_marginLeft="20dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="《付费常见问题》"
+                 android:textColor="#ff3c97ff"
+                 android:textSize="12sp"
+                 />
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:background="@drawable/bg_buy_vip_view_right"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VIP会员特权"
+                    android:textColor="#ff252525"
+                    android:textSize="16sp"
+                    />
+                <View
+                    android:background="@drawable/bg_buy_vip_view_left"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+             <TextView
+                 android:layout_marginBottom="30dp"
+                 android:layout_marginTop="30dp"
+                 android:gravity="center"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="支持所有语种\n\n无限制字数翻译\n\n无限制语言翻译次数\n\n无限制拍照翻译次数
+\n\n去广告，使用更干净"
+                 android:textColor="#ff2c2c2c"
+                 android:textSize="14sp"
+                 />
+
+
+
+         </LinearLayout>
+     </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+
+
+</layout>

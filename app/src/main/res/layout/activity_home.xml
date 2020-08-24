@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.home.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF873C"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/setting"
+                binding:onClickCommand="@{homeviewmodel.setting}" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    binding:onClickCommand="@{homeviewmodel.exchange}"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/transformation" />
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal">
+                  <LinearLayout
+
+                      android:id="@+id/activity_home_staff_language"
+                        android:layout_marginRight="20dp"
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="match_parent"
+                      android:gravity="center_vertical|right"
+                      android:orientation="horizontal">
+                      <TextView
+
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                          android:textColor="#1A1A1A"
+                          android:textSize="16dp"
+                          android:text="@={homeviewmodel.staff_language}"/>
+                      <ImageView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:src="@mipmap/triangle"
+                          android:layout_centerVertical="true"
+                          android:layout_marginLeft="10dp"/>
+                  </LinearLayout>
+                  <View
+                      android:layout_width="21dp"
+                      android:layout_height="1dp"/>
+                  <LinearLayout
+                      android:id="@+id/activity_home_target_language"
+
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                        android:layout_marginLeft="20dp"
+                      android:layout_height="match_parent"
+                      android:gravity="center_vertical"
+                      android:orientation="horizontal">
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_centerVertical="true"
+                          android:textColor="#1A1A1A"
+                          android:textSize="16dp"
+                          android:text="@={homeviewmodel.target_language}"/>
+                      <ImageView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:src="@mipmap/triangle"
+                          android:layout_centerVertical="true"
+                          android:layout_marginLeft="10dp"/>
+                  </LinearLayout>
+
+              </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/translation_record"
+                binding:onClickCommand="@{homeviewmodel.translation_record}" />
+
+
+        </LinearLayout>
+
+
+       <androidx.drawerlayout.widget.DrawerLayout
+           android:id="@+id/activity_home_drawerlayout"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           app:drawerListener="@{homeviewmodel.drawerListener}"
+           android:layout_weight="1">
+
+           <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                   <EditText
+                       android:text="@={homeviewmodel.staff_language_et}"
+                       android:gravity="top"
+                       android:paddingTop="10dp"
+                       android:paddingLeft="20dp"
+                       android:paddingRight="20dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       android:background="@null"
+                       android:hint="触摸这里输入翻译内容"
+                       android:textSize="26sp"
+                       android:textColor="#000000"
+                       android:textColorHint="#E8E8E8"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="33dp"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+                       <View
+                           android:layout_width="0dp"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1"/>
+                       <TextView
+                           binding:onClickCommand="@{homeviewmodel.clean_et}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:gravity="center"
+                           android:text="清空"
+                           android:textColor="#2E2E2E"
+                           android:paddingLeft="15dp"
+                           android:paddingRight="15dp"/>
+
+                       <ImageView
+                           binding:onClickCommand="@{homeviewmodel.copy}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@mipmap/copy"
+                           android:padding="8dp"
+                           />
+
+                       <ImageView
+                           binding:onClickCommand="@{homeviewmodel.translate}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="match_parent"
+                           android:src="@mipmap/translate"
+                           android:layout_marginLeft="5dp"
+                           android:layout_marginRight="20dp"/>
+
+                   </LinearLayout>
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="6dp"
+                       android:layout_marginTop="7dp"
+                       android:background="#f4f4f4"/>
+<!--                    <ScrollView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:layout_weight="1">-->
+
+<!--               </ScrollView>-->
+
+                   <TextView
+                       android:fadeScrollbars="false"
+                       android:scrollbars="vertical"
+                       android:id="@+id/activity_home_result"
+                       android:paddingLeft="20dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       android:textColor="@{homeviewmodel.target_language_text_color}"
+                       android:text="@={homeviewmodel.target_language_text}"
+                       android:textSize="26sp"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="33dp"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+                       <View
+                           android:layout_width="0dp"
+                           android:layout_height="match_parent"
+                           android:layout_weight="1"/>
+
+
+                       <ImageView
+                           binding:onClickCommand="@{homeviewmodel.copy2}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@mipmap/copy"
+                           android:padding="8dp"
+                           />
+
+                       <ImageView
+                           binding:onClickCommand="@{homeviewmodel.broad}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:src="@mipmap/broad"
+                           android:padding="8dp"
+                           />
+                       <ImageView
+                           binding:onClickCommand="@{homeviewmodel.happen}"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginRight="20dp"
+                           android:src="@mipmap/happen"
+                           android:padding="8dp"
+                           />
+
+
+                   </LinearLayout>
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="6dp"
+                       android:layout_marginTop="7dp"
+                       android:background="#f4f4f4"/>
+
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="70dp"
+                       android:orientation="horizontal"
+                       android:gravity="center_vertical"
+                       >
+
+                       <LinearLayout
+                           binding:onClickCommand="@{homeviewmodel.photograph}"
+                           android:layout_width="0dp"
+                           android:layout_weight="1"
+                           android:layout_marginLeft="20dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_height="42dp"
+                           android:gravity="center"
+                           android:background="@drawable/bg_startup_dialog_button">
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/photograph"/>
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:textSize="16sp"
+                               android:textColor="#2E2E2E"
+                               android:layout_marginLeft="5dp"
+                               android:text="拍照翻译"/>
+                       </LinearLayout>
+
+                       <LinearLayout
+                           binding:onClickCommand="@{homeviewmodel.voice}"
+                           android:layout_width="0dp"
+                           android:layout_weight="1"
+                           android:layout_marginLeft="20dp"
+                           android:layout_marginRight="20dp"
+                           android:layout_height="42dp"
+                           android:gravity="center"
+                           android:background="@drawable/bg_startup_dialog_button">
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/voice"/>
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:textSize="16sp"
+                               android:textColor="#2E2E2E"
+                               android:layout_marginLeft="5dp"
+                               android:text="语言翻译"/>
+                       </LinearLayout>
+
+                   </LinearLayout>
+
+
+
+               </LinearLayout>
+           </FrameLayout>
+<!--            <com.github.mzule.fantasyslide.SideBar-->
+<!--                android:id="@+id/test"-->
+
+<!--                android:layout_gravity="start"-->
+<!--                android:clickable="true"-->
+<!--                app:maxTranslationX="0dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+                <LinearLayout
+                    android:clickable="true"
+                    android:layout_gravity="start"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        binding:onClickCommand="@{homeviewmodel.tuichu}"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+
+                            binding:url="@{homeviewmodel.user_icon}"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:id="@+id/activity_home_user_icon"/>
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="#222222"
+                            android:text="@={homeviewmodel.phone}"/>
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                        <ImageView
+                            android:visibility="@{homeviewmodel.huangguanxianshi}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_vip"/>
+                        <ImageView
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="13dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#f5f5f5"/>
+                    <LinearLayout
+                        binding:onClickCommand="@{homeviewmodel.buyvip}"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="高级版会员"
+                            android:textColor="#222222"
+                            android:textSize="14sp"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#b4b4b4"
+                            android:text="@{homeviewmodel.vipExpireTime}"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f5f5f5"/>
+                    <LinearLayout
+                        binding:onClickCommand="@{homeviewmodel.translatesetting}"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="翻译设置"
+                            android:textColor="#222222"
+                            android:textSize="14sp"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="#f5f5f5"/>
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="给点个赞"
+                            android:textColor="#222222"
+                            android:textSize="14sp"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f5f5f5"/>
+                    <LinearLayout
+                        binding:onClickCommand="@{homeviewmodel.help}"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="帮助与反馈"
+                            android:textColor="#222222"
+                            android:textSize="14sp"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#f5f5f5"/>
+                    <LinearLayout
+                        binding:onClickCommand="@{homeviewmodel.about}"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="关于我们"
+                            android:textColor="#222222"
+                            android:textSize="14sp"/>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_more"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginLeft="5dp"/>
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="#f5f5f5"/>
+                </LinearLayout>
+<!--            </com.github.mzule.fantasyslide.SideBar>-->
+       </androidx.drawerlayout.widget.DrawerLayout>
+    </LinearLayout>
+</layout>

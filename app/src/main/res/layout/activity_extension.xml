@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="extensionviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.extension.ExtensionViewModel" />
+
+    </data>
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+
+                android:id="@+id/activity_extension_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:clickable="false"
+                android:text="@={extensionviewmodel.target_language_text}"
+                />
+        </ScrollView>
+    </LinearLayout>
+</layout>
+
+
+

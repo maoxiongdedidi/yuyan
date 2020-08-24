@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="translationitemviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.translationrecord.TranslationRecordItemViewModel" />
+
+        <import type="com.yueyi.yuyinfanyi.R" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:maxEms="10"
+                android:id="@+id/translate_cache_yuanwen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#323232"
+                android:textSize="20sp" />
+
+            <TextView
+                android:maxEms="10"
+                android:id="@+id/translate_cache_fanyi"
+                android:layout_below="@+id/translate_cache_yuanwen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#C2C2C2"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/translate_cache_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C2C2C2"
+                android:textSize="12sp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_alignParentRight="true"
+                />
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/translate_cache_delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/delete_cache"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+
+            <ImageView
+                android:id="@+id/translate_cache_kuozhan"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/cache_kuozhan"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/translate_cache_yuedu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/cache_fasheng"
+                />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E3E3E3" />
+    </LinearLayout>
+
+
+</layout>

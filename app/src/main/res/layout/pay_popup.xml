@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#5A5A5A"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/pay_popup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择支付方式"
+            android:textSize="12sp"
+            android:textColor="#272727"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/pay_popup_price"
+            android:layout_below="@+id/pay_popup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#272727"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/close"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="18dp"
+                android:id="@+id/pay_popup_close"/>
+
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_below="@+id/pay_popup_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/pay_popup_wechat_layout">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/wechat"
+                    android:layout_marginLeft="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信支付"
+                    android:textSize="12sp"
+                    android:textColor="#272727"
+                    android:layout_marginLeft="10dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+
+                <CheckBox
+                    android:clickable="false"
+                    android:id="@+id/pay_popup_wechat_cb"
+                    style="@style/CustomCheckBoxTheme"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+
+
+            </LinearLayout>
+
+
+            <View
+                android:background="#E3E3E3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/pay_popup_fenge"
+                android:layout_below="@+id/pay_popup_wechat_layout"/>
+
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_below="@+id/pay_popup_fenge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/pay_popup_alipy_layout">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/alipy"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支付宝"
+                android:textSize="12sp"
+                android:textColor="#272727"
+                android:layout_marginLeft="10dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+
+            <CheckBox
+                android:clickable="false"
+                android:id="@+id/pay_popup_alipy_cb"
+                style="@style/CustomCheckBoxTheme"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"/>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/pay_popup_alipy_layout"
+            android:background="@drawable/bg_startup_dialog_button"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/pay_popup_new_pay"
+            android:text="立即支付"
+            android:textColor="#1A1A1A"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

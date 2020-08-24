@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data
+       >
+        <variable
+            name="checklanguageitemviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.checklanguage.CheckLanguageItemViewModel" />
+        <import type="com.yueyi.yuyinfanyi.R"/>
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="51dp"
+    android:background="@color/white"
+    binding:onClickCommand="@{checklanguageitemviewmodel.itemClick}"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                binding:url="@{checklanguageitemviewmodel.countryBean.national_flag_resource}"
+               />
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:visibility="@{checklanguageitemviewmodel.isLock}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                binding:lockurl="@{R.mipmap.lock}"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#1A1A1A"
+            android:text="@={checklanguageitemviewmodel.countryBean.name}"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"/>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E3E3E3"/>
+</LinearLayout>
+
+
+</layout>

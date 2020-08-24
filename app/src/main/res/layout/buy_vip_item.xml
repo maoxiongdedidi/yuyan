@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="buyvipitemviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.buyvip.BuyVIPItemViewmodel" />
+    </data>
+    <LinearLayout
+        android:id="@+id/woqu"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:background="@drawable/bg_buy_vip_item"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@{buyvipitemviewmodel.topbg}"
+
+            android:gravity="center_horizontal"
+            android:layout_width="90dp"
+            android:layout_height="114dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@{buyvipitemviewmodel.productNameColor}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{buyvipitemviewmodel.productName}"
+                android:textSize="12sp"
+                android:layout_marginTop="7dp"/>
+            <TextView
+                android:textColor="@{buyvipitemviewmodel.discountPriceColor}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{buyvipitemviewmodel.discountPrice}"
+                android:textSize="20sp"
+                android:layout_marginTop="29dp"/>
+            <TextView
+                android:id="@+id/yuanjia"
+                android:textColor="@{buyvipitemviewmodel.priceColor}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{buyvipitemviewmodel.price}"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:background="@{buyvipitemviewmodel.bottombg}"
+            android:layout_width="90dp"
+            android:text="@{buyvipitemviewmodel.price_discountPrice}"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="#252525"/>
+
+
+    </LinearLayout>
+</layout>
+
+

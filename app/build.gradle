@@ -1,0 +1,118 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.yueyi.yuyinfanyi"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 按照自己的需求选择需要集成的cpu架构类型
+            abiFilters "armeabi", "armeabi-v7a"// ,"x86"//, "arm64-v8a", , "x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    dataBinding {
+        enabled true
+    }
+    signingConfigs {
+        debug {
+            storeFile file('yuyinfanyi.jks')
+            storePassword "123456"
+            keyAlias "yuyinfanyi"
+            keyPassword "123456"
+        }
+        release {
+            storeFile file('yuyinfanyi.jks')
+            storePassword "123456"
+            keyAlias "yuyinfanyi"
+            keyPassword "123456"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    flavorDimensions "default"
+    productFlavors {
+        umeng {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+        }
+        vivo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkvivo"]
+        }
+        oppo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkoppo"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkxm"]
+        }
+        huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkhw"]
+        }
+        tengxun {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkyyb"]
+        }
+        baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkbd"]
+        }
+        qihu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mk360"]
+        }
+        qt {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "mkqt"]
+        }
+
+    }
+}
+repositories {
+    jcenter()
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.github.goldze:MVVMHabit:3.0.7'
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    implementation 'me.jessyan:autosize:1.1.2'
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation files('libs/com.baidu.tts_2.5.5.109.20191014_01b8485.jar')
+    implementation 'androidx.fragment:fragment:1.2.1'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.isseiaoki:simplecropview:1.1.8'
+    implementation files('libs\\translate-asr-sdk_v1.0.5.aar')
+    implementation files('libs\\trans-ocr-sdk_v1.0.1.aar')
+    implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    implementation files('libs\\alipaySdk-15.7.4-20200228192259.aar')
+
+}
+allprojects {
+
+}

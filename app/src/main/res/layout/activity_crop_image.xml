@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="cropimageviewmodel"
+            type="com.yueyi.yuyinfanyi.ui.home.CropImageViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#343D4D"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/back"
+                binding:onClickCommand="@{cropimageviewmodel.finish}" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    binding:onClickCommand="@{cropimageviewmodel.exchange}"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/crop_zhuanhuan" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <LinearLayout
+
+                        android:id="@+id/activity_crop_image_staff_language"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|right"
+                        android:orientation="horizontal">
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:textSize="16dp"
+                            android:text="@={cropimageviewmodel.staff_language}"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/crop_xiala"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="21dp"
+                        android:layout_height="1dp"/>
+                    <LinearLayout
+                        android:id="@+id/activity_crop_image_target_language"
+
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:textSize="16dp"
+                            android:text="@={cropimageviewmodel.target_language}"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/crop_xiala"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <com.isseiaoki.simplecropview.CropImageView
+
+            android:id="@+id/activity_crop_image_cropimageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            custom:scv_handle_size="10dp"
+            custom:scv_touch_padding="10dp"
+            custom:scv_background_color="#171D28"
+            custom:scv_handle_color="#FFFFFF"
+            custom:scv_guide_color="#FFFFFF"
+            custom:scv_overlay_color="#aa1c1c1c"
+            custom:scv_frame_color="#FFFFFF"
+            custom:scv_handle_show_mode="show_always"
+            custom:scv_guide_show_mode="show_on_touch"
+            tools:ignore="MissingConstraints" />
+    <ImageView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/myimage"/>
+    <LinearLayout
+        android:background="#171D28"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/activity_crop_image_huanyuan"
+            android:paddingLeft="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@mipmap/huanyuan"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="还原"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="44dp"
+            android:background="#FF873C"
+            android:text="一键翻译"
+            android:textColor="#0f0f0f"
+            android:textSize="20sp"
+            android:gravity="center"
+            binding:onClickCommand="@{cropimageviewmodel.startfanyi}"/>
+
+        <LinearLayout
+            android:id="@+id/activity_crop_image_xuanzhuan"
+            android:paddingRight="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@mipmap/xuanzhuan"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="旋转"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+</layout>
