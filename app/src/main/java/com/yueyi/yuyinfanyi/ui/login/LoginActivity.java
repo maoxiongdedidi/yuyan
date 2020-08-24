@@ -51,7 +51,7 @@ public class LoginActivity extends MyBaseActivity<ActivityLoginBinding,LoginView
                 startActivity(intent);
             }
         });
-        binding.activityLoginPrivocy.setOnClickListener(view1->{
+         binding.activityLoginPrivocy.setOnClickListener(view1->{
             Intent intent1 = new Intent(LoginActivity.this, WebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("name","privacy");
