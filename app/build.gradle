@@ -111,6 +111,7 @@ dependencies {
     implementation files('libs\\trans-ocr-sdk_v1.0.1.aar')
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     implementation files('libs\\alipaySdk-15.7.4-20200228192259.aar')
+    implementation files('libs\\open_ad_sdk.aar')
 
 }
 allprojects {

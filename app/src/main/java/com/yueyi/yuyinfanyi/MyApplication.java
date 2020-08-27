@@ -22,7 +22,7 @@ import me.jessyan.autosize.unit.Subunits;
 import static com.yueyi.yuyinfanyi.utils.UserPreference.TAG;
 
 public class MyApplication extends BaseApplication {
-  /*  // 正常状态
+    // 正常状态
     public static final int STATE_NORMAL = 0;
     // 从后台回到前台
     public static final int STATE_BACK_TO_FRONT = 1;
@@ -37,7 +37,7 @@ public class MyApplication extends BaseApplication {
     // 从前台进入后台的时间
     private static long frontToBackTime;
     // 从后台返回前台的时间
-    private static long backToFrontTime;*/
+    private static long backToFrontTime;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -52,7 +52,6 @@ public class MyApplication extends BaseApplication {
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
         TTSUtils.getInstance().init(getApplicationContext());
     }
-    /*
         //进入后台30秒打开页面的判断，到时直接让application实现ActivityLifecycleCallbacks即可
     @Override
     public void onTrimMemory(int level) {
@@ -105,22 +104,23 @@ public class MyApplication extends BaseApplication {
         }
     }
 
-
-    *//**
+    /**
      * 进入后台间隔10分钟以后可以再次显示广告
      *
      * @return 是否能显示广告
-     *//*
+     */
+
     public static boolean canShowAd() {
         return sAppState == STATE_BACK_TO_FRONT &&
                 (backToFrontTime - frontToBackTime) > 10 * 60 * 1000;
     }
-    *//**
+
+    /**
      * 判断当前程序是否前台进程
      *
      * @param context
      * @return
-     *//*
+     */
     @RequiresApi(api = Build.VERSION_CODES.Q)
     public  boolean isCurAppTop(Context context) {
         if (context == null) {
@@ -138,6 +138,6 @@ public class MyApplication extends BaseApplication {
             }
         }
         return false;
-    }*/
+    }
 
 }

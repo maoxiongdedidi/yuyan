@@ -46,6 +46,7 @@ import com.yueyi.yuyinfanyi.utils.Utils;
 
 import java.util.HashMap;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
@@ -91,9 +92,9 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
     }
 
     private int defaultSecond = 2;  //显示默认图时间2s
-    private final Handler handler = new Handler() {
+    private final Handler handler = new Handler(new Handler.Callback() {
         @Override
-        public void handleMessage(Message msg) {
+        public boolean handleMessage(@NonNull Message msg) {
             if(msg.what==1){
                 defaultSecond--;
                 if (defaultSecond == 0) {
@@ -109,9 +110,9 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
                     handler.sendEmptyMessageDelayed(1, 1000);
                 }
             }
-
+            return true;
         }
-    };
+    });
 
 
     @Override
