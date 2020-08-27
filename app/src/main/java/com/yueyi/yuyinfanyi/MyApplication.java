@@ -5,15 +5,18 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+import com.yueyi.yuyinfanyi.advertissdk.SplashConfig;
 import com.yueyi.yuyinfanyi.utils.TTSUtils;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import me.goldze.mvvmhabit.base.BaseApplication;
 import me.jessyan.autosize.AutoSizeConfig;
@@ -21,7 +24,7 @@ import me.jessyan.autosize.unit.Subunits;
 
 import static com.yueyi.yuyinfanyi.utils.UserPreference.TAG;
 
-public class MyApplication extends BaseApplication {
+public class MyApplication extends BaseApplication implements Application.ActivityLifecycleCallbacks {
     // 正常状态
     public static final int STATE_NORMAL = 0;
     // 从后台回到前台
@@ -46,6 +49,8 @@ public class MyApplication extends BaseApplication {
                 .setSupportDP(false)
                 .setSupportSP(false)
                 .setSupportSubunits(Subunits.MM);
+        //广告
+        SplashConfig.init(this.getApplicationContext());
         //友盟
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null);
         // 选用AUTO页面采集模式
@@ -53,6 +58,7 @@ public class MyApplication extends BaseApplication {
         TTSUtils.getInstance().init(getApplicationContext());
     }
         //进入后台30秒打开页面的判断，到时直接让application实现ActivityLifecycleCallbacks即可
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
@@ -72,6 +78,17 @@ public class MyApplication extends BaseApplication {
         }
 
     }
+
+    @Override
+    public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void onActivityStarted(@NonNull Activity activity) {
+
+    }
+
     @Override
     public void onActivityResumed(@NonNull Activity activity) {
         if (background || flag) {
@@ -88,6 +105,12 @@ public class MyApplication extends BaseApplication {
             sAppState = STATE_NORMAL;
         }
     }
+
+    @Override
+    public void onActivityPaused(@NonNull Activity activity) {
+
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onActivityStopped(@NonNull Activity activity) {
@@ -104,15 +127,26 @@ public class MyApplication extends BaseApplication {
         }
     }
 
+    @Override
+    public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {
+
+    }
+
+    @Override
+    public void onActivityDestroyed(@NonNull Activity activity) {
+
+    }
+
+
     /**
-     * 进入后台间隔10分钟以后可以再次显示广告
+     * 进入后台间隔1分钟以后可以再次显示广告
      *
      * @return 是否能显示广告
      */
 
     public static boolean canShowAd() {
         return sAppState == STATE_BACK_TO_FRONT &&
-                (backToFrontTime - frontToBackTime) > 10 * 60 * 1000;
+                (backToFrontTime - frontToBackTime) > 1 * 60 * 1000;
     }
 
     /**

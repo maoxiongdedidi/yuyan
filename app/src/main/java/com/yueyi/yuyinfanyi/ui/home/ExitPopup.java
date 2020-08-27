@@ -15,14 +15,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.yueyi.yuyinfanyi.R;
-import com.yueyi.yuyinfanyi.bean.APPBean;
 import com.yueyi.yuyinfanyi.ui.login.LoginActivity;
-import com.yueyi.yuyinfanyi.ui.startup.StartupActivity;
 import com.yueyi.yuyinfanyi.utils.Utils;
 
 public class ExitPopup extends Activity {

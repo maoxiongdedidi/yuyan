@@ -13,10 +13,7 @@ import com.yueyi.yuyinfanyi.R;
 import com.yueyi.yuyinfanyi.base.MyBaseActivity;
 import com.yueyi.yuyinfanyi.databinding.ActivityLoginBinding;
 import com.yueyi.yuyinfanyi.ui.home.HomeActivity;
-import com.yueyi.yuyinfanyi.ui.startup.StartupActivity;
 import com.yueyi.yuyinfanyi.ui.web.WebViewActivity;
-
-import androidx.lifecycle.Observer;
 
 import static android.view.KeyEvent.KEYCODE_BACK;
 

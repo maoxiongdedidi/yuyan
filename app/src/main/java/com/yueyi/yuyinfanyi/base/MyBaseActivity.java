@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -19,6 +20,7 @@ import me.goldze.mvvmhabit.base.BaseActivity;
 import me.goldze.mvvmhabit.base.BaseViewModel;
 
 public abstract class MyBaseActivity <V extends ViewDataBinding, VM extends MyBaseViewModel> extends BaseActivity<V,VM> {
+    private String TAG = this.getClass().getSimpleName();
     public void changebarColor(int color){
         StatusBarUtil.setStatusBarColor(this, color);
     }
@@ -33,7 +35,7 @@ public abstract class MyBaseActivity <V extends ViewDataBinding, VM extends MyBa
     @Override
     public void onCreate(Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-
+        Log.e(TAG, "onCreate: ");
    // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         permissions();
     }
