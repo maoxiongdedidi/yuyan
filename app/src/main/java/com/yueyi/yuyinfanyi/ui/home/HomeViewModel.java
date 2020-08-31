@@ -322,7 +322,7 @@ public class HomeViewModel extends MyBaseViewModel {
         public UIChangeObservable() {
         }
     }
-    public ObservableField<String> drawerlayout_click = new ObservableField<>(null);
+    public ObservableField<String> drawerlayout_click = new ObservableField<>("");
 
 
     public ObservableField<Integer> huangguanxianshi = new ObservableField<Integer>(View.GONE);

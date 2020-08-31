@@ -18,7 +18,7 @@ public class Contents {
     public static List<RecognitionResultBean.WordsResultBean> wordsResultBeans;
     public static CacheBaseBean cacheBaseBean = null;
     public static final String CSJ_APPID = "5098536";
-    public static final String CSJ_CODEID = "887368478";//840073445
+    public static final String CSJ_CODEID = "887368478";
     public static final String GDT_APP_ID = "1110865472";
     public static final String GDT_POS_ID = "4071622600410903";
 
