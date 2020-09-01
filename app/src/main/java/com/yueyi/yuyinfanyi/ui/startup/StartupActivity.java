@@ -8,28 +8,32 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 
 import com.yueyi.yuyinfanyi.BR;
-import com.yueyi.yuyinfanyi.advertissdk.RewardAdManager;
 import com.yueyi.yuyinfanyi.base.MyBaseActivity;
 import com.yueyi.yuyinfanyi.databinding.ActivityStartupBinding;
 import com.yueyi.yuyinfanyi.ui.home.HomeActivity;
 
 
 import androidx.annotation.NonNull;
+import caridentify.ding.com.adlibary.compat.SplashAdCompat;
+import caridentify.ding.com.adlibary.simple_iml.SdkSplashIpc;
+
 import com.yueyi.yuyinfanyi.R;
 
-public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,StartupViewModel> implements RewardAdManager.RewardAdManagerListener{
+
+public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,StartupViewModel> {
     private final String SHARE_APP_TAG = "firstOpen";
     private SharedPreferences setting;
     private Boolean first;
 
-    private LinearLayout viewById;
-
     private StartupPopup startupPopup;
-
+    private FrameLayout splash_container;
 
     @Override
     public int initContentView(Bundle savedInstanceState) {
@@ -49,39 +53,11 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
     @Override
     public void initData() {
         super.initData();
-        viewById = (LinearLayout) findViewById(R.id.activity_startup_all_lauyout);
+        splash_container = findViewById(R.id.splash_container);
         setting = getSharedPreferences(SHARE_APP_TAG, 0);
         first = setting.getBoolean("FIRST", true);
-        defaultSecond=2;
-        handler.sendEmptyMessageDelayed(1, 1000);
-        RewardAdManager rewardAdManager = new RewardAdManager();
-        rewardAdManager.ShowSplashAd(this,this);
+        setSplashAd();
     }
-
-    private int defaultSecond = 2;  //显示默认图时间2s
-    private final Handler handler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(@NonNull Message msg) {
-            if(msg.what==1){
-                defaultSecond--;
-                if (defaultSecond == 0) {
-                    if(first){
-                        openPopW();
-
-                    }else{
-                        startActivity(HomeActivity.class);
-                        finish();
-                    }
-
-                } else {
-                    handler.sendEmptyMessageDelayed(1, 1000);
-                }
-            }
-            return true;
-        }
-    });
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -92,13 +68,60 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
         finish();
     }
 
-    @Override
-    public void rewardVideAdComplete() {
+    /**
+     * 设置开屏广告
+     * */
+    SplashAdCompat splashAdCompat;
+    private void setSplashAd(){
+        splashAdCompat = new SplashAdCompat(this);
+        splashAdCompat.loadSplash("4071622600410903", 3000, new SdkSplashIpc() {
+            @Override
+            public void splashComplete() {
+                splash_container.removeAllViews();
+                splash_container.setVisibility(View.VISIBLE);
+                splashAdCompat.showSplashAd(splash_container);
+            }
 
+            @Override
+            public void splashOnError(int i, String s) {
+                Log.e("YM","出错");
+            }
+
+            @Override
+            public void splashOnTimeout() {
+                Log.e("YM","超时");
+            }
+
+            @Override
+            public void OnAdSkip() {
+                goToMainActivity();
+                splash_container.removeAllViews();
+                splash_container.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void OnAdTimeOver() {
+                goToMainActivity();
+
+
+            }
+        });
+    }
+
+    public void goToMainActivity(){
+        if(first){
+            openPopW();
+
+        }else{
+            startActivity(HomeActivity.class);
+            finish();
+        }
     }
 
     @Override
-    public void rewardVideAdClose() {
-
+    protected void onDestroy() {
+        super.onDestroy();
+        splash_container.removeAllViews();
+        splash_container.setVisibility(View.GONE);
     }
 }

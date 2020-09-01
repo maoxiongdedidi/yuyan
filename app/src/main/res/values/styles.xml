@@ -8,8 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="WelcomeStyle" parent="Theme.AppCompat.NoActionBar">
-        <!-- 显示启动图片-->
-        <item name="android:windowBackground">@mipmap/open_app</item>
         <!-- 显示全屏-->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>

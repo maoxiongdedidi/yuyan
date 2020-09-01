@@ -10,7 +10,6 @@ import android.util.Log;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
-import com.yueyi.yuyinfanyi.advertissdk.SplashConfig;
 import com.yueyi.yuyinfanyi.utils.TTSUtils;
 
 import java.util.List;
@@ -18,6 +17,9 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import caridentify.ding.com.adlibary.AdSdkManager;
+import caridentify.ding.com.adlibary.config.SDKAdBuild;
+import caridentify.ding.com.adlibary.type.AdType;
 import me.goldze.mvvmhabit.base.BaseApplication;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
@@ -49,13 +51,17 @@ public class MyApplication extends BaseApplication implements Application.Activi
                 .setSupportDP(false)
                 .setSupportSP(false)
                 .setSupportSubunits(Subunits.MM);
-        //广告
-        SplashConfig.init(this.getApplicationContext());
+
         //友盟
         UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null);
         // 选用AUTO页面采集模式
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
         TTSUtils.getInstance().init(getApplicationContext());
+        //广告
+        SDKAdBuild sdkAdBuild = new SDKAdBuild();
+        sdkAdBuild.type= AdType.AD_GDT;
+        AdSdkManager.getInstance(this).initSDKAd(sdkAdBuild);
+
     }
         //进入后台30秒打开页面的判断，到时直接让application实现ActivityLifecycleCallbacks即可
     @RequiresApi(api = Build.VERSION_CODES.Q)

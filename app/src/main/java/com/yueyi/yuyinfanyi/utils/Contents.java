@@ -1,7 +1,5 @@
 package com.yueyi.yuyinfanyi.utils;
 
-import com.yueyi.yuyinfanyi.MyApplication;
-import com.yueyi.yuyinfanyi.R;
 import com.yueyi.yuyinfanyi.bean.CacheBaseBean;
 import com.yueyi.yuyinfanyi.bean.RecognitionResultBean;
 
@@ -17,11 +15,5 @@ public class Contents {
     public static final String CHANNEL = "HUAWEI";
     public static List<RecognitionResultBean.WordsResultBean> wordsResultBeans;
     public static CacheBaseBean cacheBaseBean = null;
-    public static final String CSJ_APPID = "5098536";
-    public static final String CSJ_CODEID = "887368478";
-    public static final String GDT_APP_ID = "1110865472";
-    public static final String GDT_POS_ID = "4071622600410903";
-
-    public static final String APP_NAME = MyApplication.getInstance().getString(R.string.app_name);
 }
 
