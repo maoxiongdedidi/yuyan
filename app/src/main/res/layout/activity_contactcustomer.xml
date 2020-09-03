@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#5A5A5A"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_startup_dialog">
+
+                <TextView
+                    android:layout_marginTop="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="选择联系方式"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+
+                <LinearLayout
+                    android:id="@+id/contantcustomer_wechat"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/contantcustomer_button_bg"
+                    >
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@mipmap/wechat"/>
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#FF873C"
+                        android:text="添加“rhinox01”领福利"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/contantcustomer_qq"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/contantcustomer_button_bg"
+                    >
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@mipmap/qq"/>
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#FF873C"
+                        android:text="1404556846"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                />
+            <ImageView
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"/>
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/delete_finish"
+                android:id="@+id/contactcustomer_delete"/>
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+</LinearLayout>

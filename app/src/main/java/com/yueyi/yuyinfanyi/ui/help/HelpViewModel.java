@@ -15,6 +15,7 @@ import com.yueyi.yuyinfanyi.bean.PayChannelBean;
 import com.yueyi.yuyinfanyi.httppager.ApiService;
 import com.yueyi.yuyinfanyi.httppager.RetrofitClient;
 import com.yueyi.yuyinfanyi.ui.buyvip.BuyVIPViewModel;
+import com.yueyi.yuyinfanyi.ui.dialogactivity.ContactCustomerDialogActivity;
 import com.yueyi.yuyinfanyi.utils.Contents;
 import com.yueyi.yuyinfanyi.utils.HttpInterFace;
 import com.yueyi.yuyinfanyi.utils.ReTrofitClientUtils;
@@ -45,8 +46,8 @@ public class HelpViewModel extends MyBaseViewModel {
         @Override
         public void call() {
             Bundle bundle = new Bundle();
-            bundle.putString("title","界面问题");
-            startActivity(HelpCommitActivity.class,bundle);
+            bundle.putString("title", "界面问题");
+            startActivity(HelpCommitActivity.class, bundle);
         }
     });
     //功能问题
@@ -54,8 +55,8 @@ public class HelpViewModel extends MyBaseViewModel {
         @Override
         public void call() {
             Bundle bundle = new Bundle();
-            bundle.putString("title","功能问题");
-            startActivity(HelpCommitActivity.class,bundle);
+            bundle.putString("title", "功能问题");
+            startActivity(HelpCommitActivity.class, bundle);
         }
     });
     //内容问题
@@ -63,8 +64,8 @@ public class HelpViewModel extends MyBaseViewModel {
         @Override
         public void call() {
             Bundle bundle = new Bundle();
-            bundle.putString("title","内容问题");
-            startActivity(HelpCommitActivity.class,bundle);
+            bundle.putString("title", "内容问题");
+            startActivity(HelpCommitActivity.class, bundle);
         }
     });
     //其他问题
@@ -72,8 +73,8 @@ public class HelpViewModel extends MyBaseViewModel {
         @Override
         public void call() {
             Bundle bundle = new Bundle();
-            bundle.putString("title","其他问题");
-            startActivity(HelpCommitActivity.class,bundle);
+            bundle.putString("title", "其他问题");
+            startActivity(HelpCommitActivity.class, bundle);
         }
     });
     //产品问题
@@ -81,39 +82,39 @@ public class HelpViewModel extends MyBaseViewModel {
         @Override
         public void call() {
             Bundle bundle = new Bundle();
-            bundle.putString("title","产品建议");
-            startActivity(HelpCommitActivity.class,bundle);
+            bundle.putString("title", "产品建议");
+            startActivity(HelpCommitActivity.class, bundle);
         }
     });
     public BindingCommand openqq = new BindingCommand(new BindingAction() {
         @Override
         public void call() {
-            try {
-            String url = "mqqwpa://im/chat?chat_type=wpa&uin=1404556846";//uin是发送过去的qq号码
-            getApplication().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-        } catch (Exception e) {
-            e.printStackTrace();
+          /*  try {
+                String url = "mqqwpa://im/chat?chat_type=wpa&uin=1404556846";//uin是发送过去的qq号码
+                getApplication().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            } catch (Exception e) {
+                e.printStackTrace();
                 ToastUtils.showShort("请安装QQ");
-        }
+            }*/
+          startActivity(ContactCustomerDialogActivity.class);
         }
     });
     //账号注销
     public BindingCommand zhanghao = new BindingCommand(new BindingAction() {
         @Override
         public void call() {
-           uc.openPopup.setValue("");
+            uc.openPopup.setValue("");
         }
     });
     public UIChangeObservable uc = new UIChangeObservable();
 
     public class UIChangeObservable {
-      public SingleLiveEvent<String> openPopup = new SingleLiveEvent<>();
+        public SingleLiveEvent<String> openPopup = new SingleLiveEvent<>();
     }
+
     public HelpViewModel(@NonNull Application application) {
         super(application);
     }
-
-
 
 
 }

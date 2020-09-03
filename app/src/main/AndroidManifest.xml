@@ -87,6 +87,9 @@
             android:name=".ui.dialogactivity.SeniorDialogActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name=".ui.dialogactivity.ContactCustomerDialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
         <activity
             android:name=".ui.home.ExitPopup"
             android:screenOrientation="portrait"

@@ -210,14 +210,16 @@ public class HomeActivity extends MyBaseActivity<ActivityHomeBinding, HomeViewMo
                     Gson gson = new Gson();
                     String s = gson.toJson(appBean);
 
-                    if (appBean.getVersionInfoVo().isForceUp()) {
+                    if (!appBean.getVersionInfoVo().isForceUp()) {
                         if (UpdataPreference.getInstance(HomeActivity.this).isOpenPopup()) {
                             Bundle bundle = new Bundle();
                             bundle.putString("data",s);
                             startActivity(UpdatePopup.class,bundle);
                         }
                     } else {
-
+                        Bundle bundle = new Bundle();
+                        bundle.putString("data",s);
+                        startActivity(UpdatePopup.class,bundle);
                     }
                 }
             }
