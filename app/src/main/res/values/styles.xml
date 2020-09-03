@@ -11,6 +11,7 @@
         <!-- 显示全屏-->
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@mipmap/open_app</item>
 
     </style>
     <style name="Extension" parent="Theme.AppCompat.NoActionBar">

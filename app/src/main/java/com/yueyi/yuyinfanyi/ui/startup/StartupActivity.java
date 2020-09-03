@@ -22,7 +22,10 @@ import com.yueyi.yuyinfanyi.ui.home.HomeActivity;
 
 import androidx.annotation.NonNull;
 import caridentify.ding.com.adlibary.compat.SplashAdCompat;
+import caridentify.ding.com.adlibary.compat.SplashAdHolper;
+import caridentify.ding.com.adlibary.config.SDKAdBuild;
 import caridentify.ding.com.adlibary.simple_iml.SdkSplashIpc;
+import caridentify.ding.com.adlibary.type.AdType;
 
 import com.yueyi.yuyinfanyi.R;
 
@@ -34,6 +37,7 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
 
     private StartupPopup startupPopup;
     private FrameLayout splash_container;
+    private boolean isShowAd;
 
     @Override
     public int initContentView(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
     @Override
     public void initData() {
         super.initData();
+        isShowAd = getIntent().getBooleanExtra("isShowAd", false);
         splash_container = findViewById(R.id.splash_container);
         setting = getSharedPreferences(SHARE_APP_TAG, 0);
         first = setting.getBoolean("FIRST", true);
@@ -71,25 +76,14 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
     /**
      * 设置开屏广告
      * */
-    SplashAdCompat splashAdCompat;
     private void setSplashAd(){
-        splashAdCompat = new SplashAdCompat(this);
-        splashAdCompat.loadSplash("4071622600410903", 3000, new SdkSplashIpc() {
+        SplashAdHolper splashAdHolper = new SplashAdHolper(this, AdType.AD_TT);
+        splashAdHolper.showAD(SDKAdBuild.CSJ_CODEID, SDKAdBuild.GDT_POS_ID, 2000, new SplashAdHolper.ShowAdCallBack() {
             @Override
             public void splashComplete() {
                 splash_container.removeAllViews();
                 splash_container.setVisibility(View.VISIBLE);
-                splashAdCompat.showSplashAd(splash_container);
-            }
-
-            @Override
-            public void splashOnError(int i, String s) {
-                Log.e("YM","出错");
-            }
-
-            @Override
-            public void splashOnTimeout() {
-                Log.e("YM","超时");
+                splashAdHolper.showSplashAd(splash_container);
             }
 
             @Override
@@ -102,16 +96,22 @@ public class StartupActivity extends MyBaseActivity<ActivityStartupBinding,Start
             @Override
             public void OnAdTimeOver() {
                 goToMainActivity();
+            }
 
-
+            @Override
+            public void error() {
+                goToMainActivity();
             }
         });
     }
 
     public void goToMainActivity(){
+        if(isShowAd){
+            finish();
+            return;
+        }
         if(first){
             openPopW();
-
         }else{
             startActivity(HomeActivity.class);
             finish();

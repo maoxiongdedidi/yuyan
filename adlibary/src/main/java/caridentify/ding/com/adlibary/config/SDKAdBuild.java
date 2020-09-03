@@ -18,7 +18,7 @@ public class SDKAdBuild{
     /**
      * 穿山甲开屏广告
      */
-    public String CSJ_CODEID = "887368004";
+    public static final String CSJ_CODEID = "887368004";
     /**
      * 广点通的appId， 必选参数，设置应用的AppId
      */
@@ -26,7 +26,7 @@ public class SDKAdBuild{
     /**
      * 广点通开平广告
      */
-    public String GDT_POS_ID = "4071622600410903";
+    public static final String GDT_POS_ID = "4071622600410903";
     /**
      * 广告类型
      */

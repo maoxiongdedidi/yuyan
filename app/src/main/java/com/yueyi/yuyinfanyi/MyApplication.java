@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+import com.yueyi.yuyinfanyi.ui.startup.StartupActivity;
 import com.yueyi.yuyinfanyi.utils.TTSUtils;
 
 import java.util.List;
@@ -59,11 +61,17 @@ public class MyApplication extends BaseApplication implements Application.Activi
         TTSUtils.getInstance().init(getApplicationContext());
         //广告
         SDKAdBuild sdkAdBuild = new SDKAdBuild();
-        sdkAdBuild.type= AdType.AD_GDT;
+        sdkAdBuild.type= AdType.AD_TT;
         AdSdkManager.getInstance(this).initSDKAd(sdkAdBuild);
+        //注册activity生命周期监听
+        registerActivityLifecycleCallbacks(this);
 
     }
-        //进入后台30秒打开页面的判断，到时直接让application实现ActivityLifecycleCallbacks即可
+
+    /**
+     * 进入后台60秒打开页面的判断，到时直接让application实现ActivityLifecycleCallbacks即可
+     * @param level
+     */
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onTrimMemory(int level) {
@@ -78,7 +86,6 @@ public class MyApplication extends BaseApplication implements Application.Activi
         if (background) {
             frontToBackTime = System.currentTimeMillis();
             sAppState = STATE_FRONT_TO_BACK;
-            Log.e(TAG, "onTrimMemory: TRIM_MEMORY_UI_HIDDEN || TRIM_MEMORY_BACKGROUND");
         } else {
             sAppState = STATE_NORMAL;
         }
@@ -102,10 +109,12 @@ public class MyApplication extends BaseApplication implements Application.Activi
             flag = false;
             sAppState = STATE_BACK_TO_FRONT;
             backToFrontTime = System.currentTimeMillis();
-            Log.e(TAG, "onResume: STATE_BACK_TO_FRONT");
             if (canShowAd()) {
-                // TODO: 2020/3/10 显示广告
-                // ShowADActivity.show(activity);
+                //跳转到起始页
+                Intent intent = new Intent(activity, StartupActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("isShowAd",true);
+                activity.startActivity(intent);
             }
         } else {
             sAppState = STATE_NORMAL;

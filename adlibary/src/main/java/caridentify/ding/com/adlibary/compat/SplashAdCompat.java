@@ -13,34 +13,47 @@ import caridentify.ding.com.adlibary.type.AdType;
 /**
  * created by yiwei010
  * on 2020/9/1
+ * 开屏广告实现类
  */
 public class SplashAdCompat implements AdSplashCompatIpc{
-    private AdType adType = AdType.AD_TT;
+
     private AdSplashIpc adSplashIpc;
+    private Activity context;
     public SplashAdCompat(Activity context) {
-        this.adType = AdSdkManager.getInstance(context).getAdType();
-        switch (adType){
-            case AD_GDT:
-                adSplashIpc = new GDTSplashAd(context);
-                break;
-            case AD_TT:
-                adSplashIpc = new TTSplashAd(context);
-                break;
-        }
+        this.context = context;
+    }
+
+    public void setAdSplashIpc(AdSplashIpc adSplashIpc) {
+        this.adSplashIpc = adSplashIpc;
     }
 
     @Override
     public void loadSplash(String adCode, int timeOut, SdkSplashIpc splashAdListener) {
-        adSplashIpc.loadSplash(adCode,timeOut,splashAdListener);
+        if(adSplashIpc!=null){
+            adSplashIpc.loadSplash(adCode,timeOut,splashAdListener);
+        }
     }
 
     @Override
     public void loadSplash(String adCode, SdkSplashIpc splashAdListener) {
-        adSplashIpc.loadSplash(adCode,splashAdListener);
+        if(adSplashIpc!=null){
+            adSplashIpc.loadSplash(adCode,splashAdListener);
+        }
     }
 
     @Override
     public void showSplashAd(ViewGroup container) {
-        adSplashIpc.showSplashAd(container);
+        if(adSplashIpc!=null){
+            adSplashIpc.showSplashAd(container);
+        }
     }
+
+
+
+
+
+
+
+
+
 }
