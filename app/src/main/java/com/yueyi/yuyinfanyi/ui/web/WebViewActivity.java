@@ -1,6 +1,7 @@
 package com.yueyi.yuyinfanyi.ui.web;
 
 import androidx.appcompat.app.AppCompatActivity;
+import me.goldze.mvvmhabit.utils.ToastUtils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yueyi.yuyinfanyi.R;
 import com.yueyi.yuyinfanyi.utils.StatusBarUtil;
@@ -36,8 +38,11 @@ public class WebViewActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.activity_web_title);
 
         Intent intent = getIntent();
-        Bundle build = intent.getBundleExtra("BUNDLE");
-
+        Bundle build = intent.getExtras();
+        if(build==null){
+            ToastUtils.showShort("参数错误");
+            return;
+        }
         name = build.getString("name");
         if(name.equals("agree")){
             webView.loadUrl("file:///android_asset/network.html");

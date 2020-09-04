@@ -44,7 +44,7 @@ public class LoginActivity extends MyBaseActivity<ActivityLoginBinding,LoginView
                 Intent intent = new Intent(LoginActivity.this, WebViewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("name","agree");
-                intent.putExtra("BUNDLE",bundle);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -52,8 +52,7 @@ public class LoginActivity extends MyBaseActivity<ActivityLoginBinding,LoginView
             Intent intent1 = new Intent(LoginActivity.this, WebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("name","privacy");
-            intent1.putExtra("BUNDLE",bundle);
-
+             intent1.putExtras(bundle);
             startActivity(intent1);
         });
 

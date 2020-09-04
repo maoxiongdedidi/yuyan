@@ -38,7 +38,7 @@ public class AboutActivity extends MyBaseActivity<ActivityAboutBinding,AboutView
                 Intent intent = new Intent(AboutActivity.this, WebViewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("name","agree");
-                intent.putExtra("BUNDLE",bundle);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -48,8 +48,7 @@ public class AboutActivity extends MyBaseActivity<ActivityAboutBinding,AboutView
                 Intent intent = new Intent(AboutActivity.this, WebViewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("name","privacy");
-                intent.putExtra("BUNDLE",bundle);
-
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

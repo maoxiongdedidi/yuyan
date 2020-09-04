@@ -122,14 +122,14 @@ public class StartupPopup extends FragmentActivity implements Utils.ClickListene
             Intent intent = new Intent(this, WebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("name","agree");
-            intent.putExtra("BUNDLE",bundle);
+            intent.putExtras(bundle);
             startActivity(intent);
 
         }else if(positon==3){
             Intent intent = new Intent(this, WebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("name","privacy");
-            intent.putExtra("BUNDLE",bundle);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
     }
