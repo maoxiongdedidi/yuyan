@@ -1,0 +1,149 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+	package
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:2:5-44
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:1-120:12
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:4:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:10:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:14:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:16:5-75
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:16:22-72
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:18:5-76
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:18:22-73
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:20:5-68
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:20:22-65
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:40:5-83
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:40:22-80
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:43:5-79
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:43:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:46:5-68
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:46:22-65
+application
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:57:5-119:19
+provider#com.bytedance.sdk.openadsdk.TTFileProvider
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:61:9-71:20
+	android:grantUriPermissions
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:65:13-47
+	android:authorities
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:63:13-66
+	android:exported
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:64:13-37
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:62:13-70
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:67:13-69:54
+	android:resource
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:69:17-51
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:68:17-67
+provider#com.bytedance.sdk.openadsdk.multipro.TTMultiProvider
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:73:9-76:40
+	android:authorities
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:75:13-67
+	android:exported
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:76:13-37
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:74:13-80
+uses-library#org.apache.http.legacy
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:84:9-86:40
+	android:required
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:86:13-37
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:85:13-50
+service#com.qq.e.comm.DownloadService
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:91:9-93:40
+	android:exported
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:93:13-37
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:92:13-57
+activity#com.qq.e.ads.PortraitADActivity
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:98:9-101:52
+	android:screenOrientation
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:101:13-49
+	android:configChanges
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:100:13-83
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:99:13-59
+activity#com.qq.e.ads.LandscapeADActivity
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:103:9-106:53
+	android:screenOrientation
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:106:13-50
+	android:configChanges
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:105:13-83
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:104:13-60
+provider#caridentify.ding.com.adlibary.provider.AdProvider
+ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:108:9-117:20
+	android:grantUriPermissions
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:112:13-47
+	android:authorities
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:110:13-62
+	android:exported
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:111:13-37
+	android:name
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml:109:13-48
+uses-sdk
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\demo\yuyan\yuyinfanyi\adlibary\src\main\AndroidManifest.xml
